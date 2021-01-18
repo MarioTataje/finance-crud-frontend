@@ -21,9 +21,15 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "src/theme.less",
               "src/styles.css"
             ],
             "scripts": []
@@ -120,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "finance-crud-frontend"
+  "defaultProject": "finance-crud-frontend",
+  "cli": {
+    "analytics": "5feba7a7-88e2-49bb-94bc-97595f97921b"
+  }
 }

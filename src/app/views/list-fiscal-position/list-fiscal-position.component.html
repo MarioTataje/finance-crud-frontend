@@ -1,0 +1,28 @@
+<div nz-row nzAlign="middle">
+  <div nz-col [nzSpan]="4"></div>
+  <div nz-col [nzSpan]="16">
+    <nz-table [nzData]="fiscalPositions" [nzShowPagination]="false" [nzBordered]="true" >
+      <thead>
+      <tr>
+        <th>Year Of Balance</th>
+        <th>Actual/Revised/Estimated</th>
+        <th>Category</th>
+        <th>Item</th>
+        <th>Amount (S$ million)</th>
+        <th>Percent of gdp</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let fiscalPosition of fiscalPositions">
+        <td>{{fiscalPosition.yearOfBalance}}</td>
+        <td>{{fiscalPosition.state}}</td>
+        <td>{{fiscalPosition.category}}</td>
+        <td>{{fiscalPosition.item}}</td>
+        <td>{{fiscalPosition.amount}}</td>
+        <td>{{fiscalPosition.percentOfGdp}}</td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div nz-col [nzSpan]="4"></div>
+</div>
