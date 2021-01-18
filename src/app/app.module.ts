@@ -14,13 +14,16 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { AddFiscalPositionComponent } from './views/add-fiscal-position/add-fiscal-position.component';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListFiscalPositionComponent
+    ListFiscalPositionComponent,
+    AddFiscalPositionComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ registerLocaleData(en);
     RouterModule.forRoot(routes),
     NzTableModule,
     FormsModule,
+    NzButtonModule,
     BrowserAnimationsModule,
     NzLayoutModule,
     NzGridModule

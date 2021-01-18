@@ -11,6 +11,7 @@ import {FiscalPosition} from '../../models/fiscal-position';
 export class ListFiscalPositionComponent implements OnInit {
 
   fiscalPositions: FiscalPosition[];
+  pagePosition = 0;
   // route: ActivatedRoute
   constructor(private router: Router, private fiscalPositionService: FiscalPositionService) {}
 
@@ -18,7 +19,19 @@ export class ListFiscalPositionComponent implements OnInit {
     this.getAllFiscalPositions();
   }
   getAllFiscalPositions(): void{
-    this.fiscalPositionService.getAllFiscalPositions().subscribe(
+    this.fiscalPositionService.getAllFiscalPositions(this.pagePosition).subscribe(
       (response: any) => this.fiscalPositions = response.content, (error) => console.log(error));
+  }
+  previousPage(): void{
+    if (this.pagePosition > 0){
+      this.pagePosition--;
+      this.fiscalPositionService.getAllFiscalPositions(this.pagePosition).subscribe(
+        (response: any) => this.fiscalPositions = response.content, (error) => console.log(error));
+    }
+  }
+  nextPage(): void{
+    this.pagePosition++;
+    this.fiscalPositionService.getAllFiscalPositions(this.pagePosition).subscribe(
+      (response: any) => response ? this.fiscalPositions = response.content : this.pagePosition--, (error) => console.log(error));
   }
 }

@@ -1,7 +1,13 @@
 <div nz-row nzAlign="middle">
   <div nz-col [nzSpan]="4"></div>
   <div nz-col [nzSpan]="16">
-    <nz-table [nzData]="fiscalPositions" [nzShowPagination]="false" [nzBordered]="true" >
+    <br/>
+    <div style="text-align: end">
+      <button nz-button nzType="primary" nzSize="large" nzShape="round"
+              style="background-color: orchid;">Add</button>
+    </div>
+    <br/>
+    <nz-table [nzData]="fiscalPositions" [nzBordered]="true" [nzShowPagination]="false">
       <thead>
       <tr>
         <th>Year Of Balance</th>
@@ -18,11 +24,18 @@
         <td>{{fiscalPosition.state}}</td>
         <td>{{fiscalPosition.category}}</td>
         <td>{{fiscalPosition.item}}</td>
-        <td>{{fiscalPosition.amount}}</td>
-        <td>{{fiscalPosition.percentOfGdp}}</td>
+        <td>{{fiscalPosition.amount | number}}</td>
+        <td>{{(fiscalPosition.percentOfGdp*100).toFixed(1)}}%</td>
       </tr>
       </tbody>
     </nz-table>
+    <br/>
+    <div>
+      <button nz-button nzType="primary" nzSize="large" nzShape="round"
+                style="background-color: cornflowerblue; float: left" (click)="previousPage()">Previous</button>
+      <button nz-button nzType="primary" nzSize="large" nzShape="round"
+                style="background-color: cornflowerblue; float: right" (click)="nextPage()">Next</button>
+    </div>
   </div>
   <div nz-col [nzSpan]="4"></div>
 </div>
