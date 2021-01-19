@@ -1,1 +1,70 @@
-<p>add-fiscal-position works!</p>
+<nz-row nzJustify="center" nzAlign="middle" style="height: 100%">
+  <div nz-col nzSpan="9"></div>
+  <div nz-col nzSpan="6">
+    <nz-card style="width:360px;" nzTitle="Add Fiscal Position" [nzBordered]="true">
+      <form nz-form [formGroup]="form" (ngSubmit)="saveFiscalPosition()">
+        <nz-form-item>
+          <nz-form-label nzSpan="7">Year of Balance</nz-form-label>
+          <nz-form-control>
+            <label>
+              <input nz-input formControlName="yearOfBalance" name="yearOfBalance"/>
+            </label>
+          </nz-form-control>
+        </nz-form-item>
+        <br/>
+        <nz-form-item>
+          <nz-form-label nzSpan="7">State</nz-form-label>
+          <nz-form-control>
+            <nz-select nzPlaceHolder="Select State" formControlName="state">
+              <nz-option *ngFor="let option of statesOptions" [nzValue]="option" [nzLabel]="option"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <br/>
+        <nz-form-item>
+          <nz-form-label nzSpan="7">Category</nz-form-label>
+          <nz-form-control>
+            <label>
+              <input nz-input formControlName="category" name="category"/>
+            </label>
+          </nz-form-control>
+        </nz-form-item>
+        <br/>
+        <nz-form-item>
+          <nz-form-label nzSpan="7">Item</nz-form-label>
+          <nz-form-control>
+            <label>
+              <input nz-input formControlName="item" name="item"/>
+            </label>
+          </nz-form-control>
+        </nz-form-item>
+        <br/>
+        <nz-form-item>
+          <nz-form-label nzSpan="7">Amount</nz-form-label>
+          <nz-form-control>
+            <label>
+              <input nz-input type="number" formControlName="amount" name="amount"/>
+            </label>
+          </nz-form-control>
+        </nz-form-item>
+        <br/>
+        <nz-form-item>
+          <nz-form-label nzSpan="7">Percent of Gdp</nz-form-label>
+          <nz-form-control>
+            <label>
+              <input nz-input type="number" formControlName="percentOfGdp" name="percent of gdp"/>
+            </label>
+          </nz-form-control>
+        </nz-form-item>
+        <br/>
+        <div>
+          <button nz-button nzType="primary" nzSize="large" nzShape="round"
+                  style="background-color: black; float: left" routerLink="/">Cancel</button>
+          <button nz-button nzType="primary" nzSize="large" nzShape="round"
+                  style="background-color: black; float: right" type="submit">Save</button>
+        </div>
+      </form>
+    </nz-card>
+  </div>
+  <div nz-col nzSpan="9"></div>
+</nz-row>

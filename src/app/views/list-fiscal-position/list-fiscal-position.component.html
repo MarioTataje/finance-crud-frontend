@@ -1,11 +1,11 @@
 <div nz-row nzAlign="middle">
-  <div nz-col [nzSpan]="4"></div>
-  <div nz-col [nzSpan]="16">
+  <div nz-col [nzSpan]="3"></div>
+  <div nz-col [nzSpan]="18">
     <br/>
-    <div style="text-align: end">
-      <button nz-button nzType="primary" nzSize="large" nzShape="round"
-              style="background-color: orchid;">Add</button>
-    </div>
+    <button nz-button nzType="primary" nzSize="large" nzShape="round"
+            style="background-color: #da70d6; float: right" routerLink="/add-fiscal-position">Add</button>
+    <br/>
+    <br/>
     <br/>
     <nz-table [nzData]="fiscalPositions" [nzBordered]="true" [nzShowPagination]="false">
       <thead>
@@ -32,10 +32,10 @@
     <br/>
     <div>
       <button nz-button nzType="primary" nzSize="large" nzShape="round"
-                style="background-color: cornflowerblue; float: left" (click)="previousPage()">Previous</button>
+                style="background-color: black; float: left" (click)="previousPage()">Previous</button>
       <button nz-button nzType="primary" nzSize="large" nzShape="round"
-                style="background-color: cornflowerblue; float: right" (click)="nextPage()">Next</button>
+                style="background-color: black; float: right" (click)="nextPage()">Next</button>
     </div>
   </div>
-  <div nz-col [nzSpan]="4"></div>
+  <div nz-col [nzSpan]="3"></div>
 </div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 import {FiscalPositionService} from '../../services/fiscal-position.service';
 import {FiscalPosition} from '../../models/fiscal-position';
 
@@ -13,7 +12,7 @@ export class ListFiscalPositionComponent implements OnInit {
   fiscalPositions: FiscalPosition[];
   pagePosition = 0;
   // route: ActivatedRoute
-  constructor(private router: Router, private fiscalPositionService: FiscalPositionService) {}
+  constructor(private fiscalPositionService: FiscalPositionService) {}
 
   ngOnInit(): void {
     this.getAllFiscalPositions();
