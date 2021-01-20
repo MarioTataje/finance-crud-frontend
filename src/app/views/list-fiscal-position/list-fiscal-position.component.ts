@@ -11,7 +11,9 @@ import {Router} from '@angular/router';
 export class ListFiscalPositionComponent implements OnInit {
 
   fiscalPositions: FiscalPosition[];
+  fiscalPositionId: number;
   pagePosition = 0;
+  visibleModalDelete = false;
   // route: ActivatedRoute
   constructor(private fiscalPositionService: FiscalPositionService, private router: Router ) {}
 
@@ -37,7 +39,14 @@ export class ListFiscalPositionComponent implements OnInit {
   goToEditFiscalPosition(id: number): void{
     this.router.navigate([`edit-fiscal-position/${id}`]).then();
   }
+  showModalDelete(fiscalPositionId: number): void{
+    this.fiscalPositionId = fiscalPositionId;
+    this.visibleModalDelete = true;
+  }
+  cancelModalDelete(): void{
+    this.visibleModalDelete = false;
+  }
   deleteFiscalPosition(): void{
-    console.log('delete');
+    this.fiscalPositionService.deleteFiscalPosition(1).subscribe(location.reload());
   }
 }

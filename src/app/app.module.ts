@@ -22,6 +22,7 @@ import {NzSelectModule} from 'ng-zorro-antd/select';
 import {NzCardModule} from 'ng-zorro-antd/card';
 import {NzSpaceModule } from 'ng-zorro-antd/space';
 import { EditFiscalPositionComponent } from './views/edit-fiscal-position/edit-fiscal-position.component';
+import {NzModalModule} from 'ng-zorro-antd/modal';
 
 registerLocaleData(en);
 
@@ -32,23 +33,24 @@ registerLocaleData(en);
     AddFiscalPositionComponent,
     EditFiscalPositionComponent,
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes),
-    NzTableModule,
-    FormsModule,
-    NzButtonModule,
-    BrowserAnimationsModule,
-    NzLayoutModule,
-    NzGridModule,
-    NzIconModule,
-    NzInputModule,
-    NzCardModule,
-    ReactiveFormsModule,
-    NzSelectModule,
-    NzSpaceModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        RouterModule.forRoot(routes),
+        NzTableModule,
+        FormsModule,
+        NzButtonModule,
+        BrowserAnimationsModule,
+        NzLayoutModule,
+        NzGridModule,
+        NzIconModule,
+        NzInputModule,
+        NzCardModule,
+        ReactiveFormsModule,
+        NzSelectModule,
+        NzSpaceModule,
+        NzModalModule
+    ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
