@@ -20,6 +20,9 @@ export class FiscalPositionService {
     parameters = parameters.append('page', String(page));
     return this.http.get<FiscalPosition[]>(`${this.baseUrl}/fiscal-positions`, {params: parameters});
   }
+  getFiscalPositionById(id: number): Observable<FiscalPosition>{
+    return this.http.get<FiscalPosition>(`${this.baseUrl}/fiscal-positions/${id}`);
+  }
   saveFiscalPosition(fiscalPosition: FiscalPosition): any{
     return this.http.post<FiscalPosition>(`${this.baseUrl}/fiscal-positions`, fiscalPosition);
   }

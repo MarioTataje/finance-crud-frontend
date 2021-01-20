@@ -33,7 +33,6 @@ export class AddFiscalPositionComponent implements OnInit {
       console.log('invalid');
     } else {
       this.fiscalPosition = this.form.value;
-      console.log(this.fiscalPosition);
       this.fiscalPositionService.saveFiscalPosition(this.fiscalPosition).subscribe();
       this.router.navigate(['fiscal-positions']).then();
     }

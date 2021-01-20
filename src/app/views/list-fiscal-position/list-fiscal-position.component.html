@@ -1,6 +1,6 @@
 <div nz-row nzAlign="middle">
-  <div nz-col [nzSpan]="3"></div>
-  <div nz-col [nzSpan]="18">
+  <div nz-col [nzSpan]="2"></div>
+  <div nz-col [nzSpan]="20">
     <br/>
     <button nz-button nzType="primary" nzSize="large" nzShape="round"
             style="background-color: #da70d6; float: right" routerLink="/add-fiscal-position">Add</button>
@@ -16,6 +16,7 @@
         <th>Item</th>
         <th>Amount (S$ million)</th>
         <th>Percent of gdp</th>
+        <th>Actions</th>
       </tr>
       </thead>
       <tbody>
@@ -26,6 +27,14 @@
         <td>{{fiscalPosition.item}}</td>
         <td>{{fiscalPosition.amount | number}}</td>
         <td>{{(fiscalPosition.percentOfGdp*100).toFixed(1)}}%</td>
+        <td>
+          <button style="margin-right: 3px" (click)="goToEditFiscalPosition(fiscalPosition.id)">
+            <i nz-icon nzType="edit" nzTheme="outline"></i>
+          </button>
+          <button (click)="deleteFiscalPosition()">
+            <i nz-icon nzType="delete" nzTheme="outline"></i>
+          </button>
+        </td>
       </tr>
       </tbody>
     </nz-table>
@@ -37,5 +46,5 @@
                 style="background-color: black; float: right" (click)="nextPage()">Next</button>
     </div>
   </div>
-  <div nz-col [nzSpan]="3"></div>
+  <div nz-col [nzSpan]="2"></div>
 </div>
