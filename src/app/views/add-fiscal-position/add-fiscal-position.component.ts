@@ -3,6 +3,7 @@ import {FiscalPosition} from '../../models/fiscal-position';
 import {FormBuilder, Validators, FormGroup} from '@angular/forms';
 import {FiscalPositionService} from '../../services/fiscal-position.service';
 import {Router} from '@angular/router';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-add-fiscal-position',
@@ -10,7 +11,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-fiscal-position.component.css']
 })
 export class AddFiscalPositionComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder, private fiscalPositionService: FiscalPositionService, private router: Router ) { }
+  constructor(private formBuilder: FormBuilder, private fiscalPositionService: FiscalPositionService,
+              private router: Router, private notification: NzNotificationService ) { }
 
   fiscalPosition = new FiscalPosition();
   statesOptions = ['Actual', 'Revised', 'Estimated'];
@@ -30,7 +32,7 @@ export class AddFiscalPositionComponent implements OnInit {
   }
   saveFiscalPosition(): void{
     if (this.form.invalid){
-      console.log('invalid');
+      this.notification.error('Failed', 'Please, complete all the fields', {nzDuration: 2300});
     } else {
       this.fiscalPosition = this.form.value;
       this.fiscalPositionService.saveFiscalPosition(this.fiscalPosition).subscribe();
