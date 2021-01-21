@@ -1,4 +1,4 @@
-<div nz-row nzAlign="middle">
+<div nz-row nzAlign="middle" nzJustify="center">
   <div nz-col [nzSpan]="2"></div>
   <div nz-col [nzSpan]="20">
     <br/>
@@ -7,7 +7,8 @@
     <br/>
     <br/>
     <br/>
-    <nz-table [nzData]="fiscalPositions" [nzBordered]="true" [nzShowPagination]="false">
+    <nz-table [nzData]="fiscalPositions" [nzBordered]="true" [nzShowPagination]="false"
+              nzTableLayout="fixed" nzSize="small" [nzScroll]="{x: '240px', y: '280px'}">
       <thead>
       <tr>
         <th>Year Of Balance</th>

@@ -1,7 +1,6 @@
-<nz-row nzJustify="center" nzAlign="middle" style="height: 100%">
-  <div nz-col nzSpan="9"></div>
-  <div nz-col nzSpan="6">
-    <nz-card style="width:360px;" nzTitle="Edit Fiscal Position" [nzBordered]="true" (submit)="updateFiscalPosition()">
+<nz-row nzJustify="center" nzAlign="middle" style="height: 90%">
+  <div nz-col>
+    <nz-card nzTitle="Edit Fiscal Position" [nzBordered]="true" (submit)="updateFiscalPosition()">
       <form nz-form [formGroup]="form">
         <nz-form-item>
           <nz-form-label nzSpan="7">Year of Balance</nz-form-label>
@@ -66,5 +65,4 @@
       </form>
     </nz-card>
   </div>
-  <div nz-col nzSpan="9"></div>
 </nz-row>

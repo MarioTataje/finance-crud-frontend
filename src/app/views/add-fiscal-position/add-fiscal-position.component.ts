@@ -32,6 +32,7 @@ export class AddFiscalPositionComponent implements OnInit {
   }
   saveFiscalPosition(): void{
     if (this.form.invalid){
+      console.log(this.form);
       this.notification.error('Failed', 'Please, complete all the fields', {nzDuration: 2300});
     } else {
       this.fiscalPosition = this.form.value;
