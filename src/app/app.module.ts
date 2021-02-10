@@ -24,6 +24,7 @@ import {NzSpaceModule } from 'ng-zorro-antd/space';
 import {NzNotificationModule} from 'ng-zorro-antd/notification';
 import { EditFiscalPositionComponent } from './views/edit-fiscal-position/edit-fiscal-position.component';
 import {NzModalModule} from 'ng-zorro-antd/modal';
+import {NzFormModule} from 'ng-zorro-antd/form';
 
 registerLocaleData(en);
 
@@ -45,6 +46,7 @@ registerLocaleData(en);
       NzLayoutModule,
       NzGridModule,
       NzIconModule,
+      NzFormModule,
       NzInputModule,
       NzCardModule,
       NzNotificationModule,

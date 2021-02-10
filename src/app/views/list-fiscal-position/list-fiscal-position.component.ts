@@ -47,6 +47,6 @@ export class ListFiscalPositionComponent implements OnInit {
     this.visibleModalDelete = false;
   }
   deleteFiscalPosition(): void{
-    this.fiscalPositionService.deleteFiscalPosition(1).subscribe(location.reload());
+    this.fiscalPositionService.deleteFiscalPosition(this.fiscalPositionId).subscribe(location.reload());
   }
 }

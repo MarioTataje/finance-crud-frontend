@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import { HttpParams } from '@angular/common/http';
@@ -16,9 +16,10 @@ export class FiscalPositionService {
   }
   getAllFiscalPositions(page: number): Observable<FiscalPosition[]>{
     let parameters = new HttpParams();
+    const headerazu = new HttpHeaders();
     parameters = parameters.append('size', String(5));
     parameters = parameters.append('page', String(page));
-    return this.http.get<FiscalPosition[]>(`${this.baseUrl}/fiscal-positions`, {params: parameters});
+    return this.http.get<FiscalPosition[]>(`${this.baseUrl}/fiscal-positions`, {params: parameters, headers: headerazu});
   }
   getFiscalPositionById(id: number): Observable<FiscalPosition>{
     return this.http.get<FiscalPosition>(`${this.baseUrl}/fiscal-positions/${id}`);
